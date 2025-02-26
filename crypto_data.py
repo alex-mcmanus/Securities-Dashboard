@@ -5,6 +5,14 @@ from datetime import datetime, timedelta
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 import logging
+import os
+
+# Set the output directory to the data folder in the repository
+OUTPUT_DIR = "data"
+OUTPUT_FILE = "crypto_historical_data.csv"
+
+# Ensure output directory exists
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
